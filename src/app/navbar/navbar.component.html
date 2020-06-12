@@ -1,6 +1,6 @@
-<div class="mainbody container-fluid">
-  <nav class="navbar navbar-expand-md navbar-dark bg-primary fixed-top">
-    <a class="navbar-brand" href="#">Angular</a>
+<nav class="navbar navbar-expand-md navbar-dark bg-primary static-top mb-2">
+  <div class="container">
+    <a class="navbar-brand" routerLink="/"><h4>WOW!</h4></a>
     <button
       class="navbar-toggler hidden-sm-up"
       type="button"
@@ -18,21 +18,19 @@
       id="navbarsDefault"
     >
       <ul class="navbar-nav mr-auto">
-        <li class="nav-item dropdown" ngbDropdown>
-          <a
-            class="nav-link dropdown-toggle"
-            id="id01"
-            href="#"
-            ngbDropdownToggle
-            >Files</a
-          >
-          <div class="dropdown-menu" aria-labelledby="id01" ngbDropdownMenu>
-            <a class="dropdown-item" href="#">HTML</a>
-            <a class="dropdown-item" href="#">TS</a>
-            <a class="dropdown-item" href="#">JS</a>
-          </div>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/favorite">My Favorite</a>
+        </li>
+        <li class="nav-item d-sm-none d-xs-block">
+          <a class="nav-link" routerLink="/signin">Sign In</a>
         </li>
       </ul>
+      <nav class="navbar navbar-light d-none d-sm-block">
+        <a class="btn btn-light ml-auto" routerLink="/signin">Sign In</a>
+      </nav>
     </div>
-  </nav>
-</div>
+  </div>
+</nav>
