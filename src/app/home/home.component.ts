@@ -25,12 +25,12 @@ export class HomeComponent implements OnInit {
     );
   }
 
+  // Fetch more characters
   loadingMoreHandler() {
     this.btnLoading = true;
     let offest: number = this.limit + 3;
     this.ApiService.getCharacters(3, offest).subscribe(({ data }: any) => {
       let margeCharacters = [...this.characters, ...data.results];
-      // this.characters.push(data.results);
       this.characters = margeCharacters;
       this.limit = offest;
       this.btnLoading = false;
