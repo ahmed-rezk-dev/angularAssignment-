@@ -45,4 +45,16 @@
       </div>
     </div>
   </div>
+  <!-- Loading more -->
+  <div class="col-md-12 mt-5 text-center">
+    <button
+      type="button"
+      class="btn btn-info"
+      [disabled]="btnLoading"
+      (click)="loadingMoreHandler()"
+    >
+      <div *ngIf="btnLoading" class="spinner"></div>
+      View more!
+    </button>
+  </div>
 </div>

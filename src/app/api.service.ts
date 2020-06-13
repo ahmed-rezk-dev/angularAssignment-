@@ -15,11 +15,13 @@ export class ApiService {
   };
 
   getUrl(path: string): string {
-    return `https://gateway.marvel.com:443/v1/public/${path}?ts=1592059872&apikey=ef105031fcd0c0bceb0ac33d618c78d7&hash=5ceec93a6a4e2ded6b7489054abb7ca0`;
+    return `https://gateway.marvel.com:443/v1/public/${path}ts=1592059872&apikey=ef105031fcd0c0bceb0ac33d618c78d7&hash=5ceec93a6a4e2ded6b7489054abb7ca0`;
   }
 
-  getCharacters() {
-    return this.http.get(this.getUrl('characters'));
+  getCharacters(limit: number, offset: number) {
+    return this.http.get(
+      this.getUrl(`characters?limit=${limit}&offset=${offset}&`)
+    );
   }
   getCreators() {
     return this.http.get(this.getUrl('creators'));
