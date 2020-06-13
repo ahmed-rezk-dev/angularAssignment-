@@ -1,1 +1,48 @@
-<p>home works!</p>
+<!-- loading spinner -->
+<div *ngIf="loading" class="backdrop">
+  <div class="spinner"></div>
+  <div class="logo">loading...</div>
+</div>
+
+<!-- characters list -->
+<div *ngIf="!loading" class="row card-character-container">
+  <div class="col-md-12">
+    <h2>
+      Characters
+      <hr />
+    </h2>
+  </div>
+  <div class="col-md-4 mt-3 mb-3" *ngFor="let character of characters">
+    <div class="card card-character text-left">
+      <img
+        class="card-img-top"
+        src="{{ character.thumbnail.path }}.{{ character.thumbnail.extension }}"
+        alt="{{ character.name }}"
+      />
+      <div class="card-body">
+        <a href="" class="btn btn-link"
+          ><h5 class="card-title">{{ character.name }}</h5></a
+        >
+      </div>
+      <div class="card-footer">
+        <!-- Buttons -->
+        <a
+          href="#"
+          class="btn btn-primary mr-3"
+          placement="top"
+          ngbTooltip="View details"
+          ><i class="fa fa-eye" aria-hidden="true"></i
+        ></a>
+
+        <a
+          href="#"
+          class="btn btn-warning favorite-btn"
+          placement="top"
+          ngbTooltip="Save favorite"
+          ><i class="fa fa-heart" aria-hidden="true"></i
+        ></a>
+        <!-- /Buttons -->
+      </div>
+    </div>
+  </div>
+</div>

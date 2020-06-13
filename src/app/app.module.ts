@@ -10,6 +10,9 @@ import { HomeComponent } from './home/home.component';
 import { SigninComponent } from './signin/signin.component';
 import { FavoriteComponent } from './favorite/favorite.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { CharacterDetailsComponent } from './character-details/character-details.component';
+import { CreatorDetailsComponent } from './creator-details/creator-details.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +22,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     HomeComponent,
     SigninComponent,
     FavoriteComponent,
+    CharacterDetailsComponent,
+    CreatorDetailsComponent,
   ],
   imports: [
     BrowserModule,
@@ -26,6 +31,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     NgbModule,
     FormsModule,
     ReactiveFormsModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
