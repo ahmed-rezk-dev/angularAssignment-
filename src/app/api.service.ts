@@ -23,6 +23,26 @@ export class ApiService {
       this.getUrl(`characters?limit=${limit}&offset=${offset}&`)
     );
   }
+  getCharacterDetials(id: number) {
+    return this.http.get(this.getUrl(`characters/${id}?`));
+  }
+
+  getCharacterComics(id: number) {
+    return this.http.get(this.getUrl(`characters/${id}/comics?`));
+  }
+
+  getCharacterSeries(id: number) {
+    return this.http.get(this.getUrl(`characters/${id}/series?`));
+  }
+
+  getCharacterStories(id: number) {
+    return this.http.get(this.getUrl(`characters/${id}/stories?`));
+  }
+
+  getComicDetials(id: number) {
+    return this.http.get(this.getUrl(`comics/${id}?`));
+  }
+
   getCreators() {
     return this.http.get(this.getUrl('creators'));
   }

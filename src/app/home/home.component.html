@@ -1,8 +1,5 @@
 <!-- loading spinner -->
-<div *ngIf="loading" class="backdrop">
-  <div class="spinner"></div>
-  <div class="logo">loading...</div>
-</div>
+<app-loading *ngIf="loading"></app-loading>
 
 <!-- characters list -->
 <div *ngIf="!loading" class="row card-character-container">
@@ -20,17 +17,22 @@
         alt="{{ character.name }}"
       />
       <div class="card-body">
-        <a href="" class="btn btn-link"
-          ><h5 class="card-title">{{ character.name }}</h5></a
+        <a
+          class="btn btn-link"
+          routerLink="character/details"
+          [queryParams]="{ id: character.id }"
         >
+          <h5 class="card-title">{{ character.name }}</h5>
+        </a>
       </div>
       <div class="card-footer">
         <!-- Buttons -->
         <a
-          href="#"
           class="btn btn-primary mr-3"
           placement="top"
           ngbTooltip="View details"
+          routerLink="character/details"
+          [queryParams]="{ id: character.id }"
           ><i class="fa fa-eye" aria-hidden="true"></i
         ></a>
 

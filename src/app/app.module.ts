@@ -13,6 +13,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { CharacterDetailsComponent } from './character-details/character-details.component';
 import { CreatorDetailsComponent } from './creator-details/creator-details.component';
+import { ComicDetailsComponent } from './comic-details/comic-details.component';
+import { LoadingComponent } from './loading/loading.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +26,8 @@ import { CreatorDetailsComponent } from './creator-details/creator-details.compo
     FavoriteComponent,
     CharacterDetailsComponent,
     CreatorDetailsComponent,
+    ComicDetailsComponent,
+    LoadingComponent,
   ],
   imports: [
     BrowserModule,
