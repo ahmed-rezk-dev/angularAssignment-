@@ -38,11 +38,6 @@
             >
               <h5 class="card-title">{{ comic.title }}</h5>
             </a>
-            <p class="card-title">
-              <a href="#" *ngFor="let creator of comic.creators.items">
-                {{ creator.name }},
-              </a>
-            </p>
           </div>
           <div class="card-footer">
             <!-- Buttons -->
@@ -55,13 +50,14 @@
               ><i class="fa fa-eye" aria-hidden="true"></i
             ></a>
 
-            <a
-              href="#"
+            <button
               class="btn btn-warning favorite-btn"
               placement="top"
               ngbTooltip="Save favorite"
-              ><i class="fa fa-heart" aria-hidden="true"></i
-            ></a>
+              (click)="addToFav('comics', comic)"
+            >
+              <i class="fa fa-heart" aria-hidden="true"></i>
+            </button>
             <!-- /Buttons -->
           </div>
         </div>
@@ -105,13 +101,14 @@
               ><i class="fa fa-eye" aria-hidden="true"></i
             ></a>
 
-            <a
-              href="#"
+            <button
               class="btn btn-warning favorite-btn"
               placement="top"
               ngbTooltip="Save favorite"
-              ><i class="fa fa-heart" aria-hidden="true"></i
-            ></a>
+              (click)="addToFav('series', item)"
+            >
+              <i class="fa fa-heart" aria-hidden="true"></i>
+            </button>
             <!-- /Buttons -->
           </div>
         </div>

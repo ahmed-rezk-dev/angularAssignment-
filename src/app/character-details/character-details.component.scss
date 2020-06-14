@@ -2,18 +2,22 @@
   margin-top: 5rem;
   margin-bottom: 5rem;
   .card-img-top {
-    height: 345px;
+    height: 445px;
     width: 345px;
-    max-height: 345px;
     position: relative;
     overflow: hidden;
     border-radius: 0;
     z-index: 1;
-    margin-bottom: 3rem;
+    margin-bottom: 1rem;
   }
   .card-title {
     a {
       font-size: small;
+    }
+  }
+  .favorite-btn {
+    i {
+      color: white;
     }
   }
 }

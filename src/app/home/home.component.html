@@ -36,13 +36,14 @@
           ><i class="fa fa-eye" aria-hidden="true"></i
         ></a>
 
-        <a
-          href="#"
+        <button
           class="btn btn-warning favorite-btn"
           placement="top"
           ngbTooltip="Save favorite"
-          ><i class="fa fa-heart" aria-hidden="true"></i
-        ></a>
+          (click)="addToFav('characters', character)"
+        >
+          <i class="fa fa-heart" aria-hidden="true"></i>
+        </button>
         <!-- /Buttons -->
       </div>
     </div>

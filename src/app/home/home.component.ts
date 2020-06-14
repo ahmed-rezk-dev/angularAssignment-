@@ -1,5 +1,6 @@
 import { ApiService } from '../api.service';
 import { Component, OnInit } from '@angular/core';
+import LocalStorage from '../LocalStorage';
 
 @Component({
   selector: 'app-home',
@@ -34,7 +35,10 @@ export class HomeComponent implements OnInit {
       this.characters = margeCharacters;
       this.limit = offest;
       this.btnLoading = false;
-      console.log('this.characters:', this.characters);
     });
+  }
+
+  addToFav(key: string, item: Object) {
+    LocalStorage.favoriteAdd(key, item);
   }
 }

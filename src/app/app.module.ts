@@ -15,6 +15,8 @@ import { CharacterDetailsComponent } from './character-details/character-details
 import { CreatorDetailsComponent } from './creator-details/creator-details.component';
 import { ComicDetailsComponent } from './comic-details/comic-details.component';
 import { LoadingComponent } from './loading/loading.component';
+import { StoreModule } from '@ngrx/store';
+import { favoriteReducer } from './store/favorite.reducer';
 
 @NgModule({
   declarations: [
@@ -36,6 +38,9 @@ import { LoadingComponent } from './loading/loading.component';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    StoreModule.forRoot({
+      favorite: favoriteReducer,
+    }),
   ],
   providers: [],
   bootstrap: [AppComponent],

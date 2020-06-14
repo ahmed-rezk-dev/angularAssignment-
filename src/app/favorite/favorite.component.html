@@ -1,1 +1,113 @@
-<p>favorite works!</p>
+<div class="row card-character-details-container">
+  <!-- top info -->
+  <div class="col-md-12 text-center mt-5 mb-5">
+    <h2>My Favorite</h2>
+  </div>
+
+  <!-- Comics List -->
+  <div class="col-md-12 mt-2">
+    <div class="row card-character-container">
+      <div class="col-md-12">
+        <h2>
+          Comics
+          <hr />
+        </h2>
+      </div>
+      <div class="col-md-4 mt-3 mb-3" *ngFor="let comic of comics | async">
+        <div class="card card-character text-left">
+          <img
+            class="card-img-top"
+            src="{{ comic.thumbnail.path }}.{{ comic.thumbnail.extension }}"
+            alt="{{ comic.title }}"
+          />
+          <div class="card-body">
+            <a
+              class="btn btn-link"
+              routerLink="/comic/details"
+              [queryParams]="{ id: comic.id }"
+            >
+              <h5 class="card-title">{{ comic.title }}</h5>
+            </a>
+          </div>
+          <div class="card-footer">
+            <!-- Buttons -->
+            <a
+              class="btn btn-primary mr-3"
+              placement="top"
+              ngbTooltip="View details"
+              routerLink="/comic/details"
+              [queryParams]="{ id: comic.id }"
+              ><i class="fa fa-eye" aria-hidden="true"></i
+            ></a>
+
+            <button
+              class="btn btn-warning favorite-btn"
+              placement="top"
+              ngbTooltip="Save favorite"
+              (click)="addToFav('comics', comic)"
+            >
+              <i class="fa fa-heart" aria-hidden="true"></i>
+            </button>
+            <!-- /Buttons -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- characters List -->
+  <div class="col-md-12 mt-5">
+    <div class="row card-character-container">
+      <div class="col-md-12">
+        <h2>
+          Character
+          <hr />
+        </h2>
+      </div>
+      <div
+        class="col-md-4 mt-3 mb-3"
+        *ngFor="let character of characters | async"
+      >
+        <div class="card card-character text-left">
+          <img
+            class="card-img-top"
+            src="{{ character.thumbnail.path }}.{{
+              character.thumbnail.extension
+            }}"
+            alt="{{ character.name }}"
+          />
+          <div class="card-body">
+            <a
+              class="btn btn-link"
+              routerLink="/character/details"
+              [queryParams]="{ id: character.id }"
+            >
+              <h5 class="card-title">{{ character.name }}</h5>
+            </a>
+          </div>
+          <div class="card-footer">
+            <!-- Buttons -->
+            <a
+              class="btn btn-primary mr-3"
+              placement="top"
+              ngbTooltip="View details"
+              routerLink="/character/details"
+              [queryParams]="{ id: character.id }"
+              ><i class="fa fa-eye" aria-hidden="true"></i
+            ></a>
+
+            <button
+              class="btn btn-warning favorite-btn"
+              placement="top"
+              ngbTooltip="Save favorite"
+              (click)="addToFav('characters', character)"
+            >
+              <i class="fa fa-heart" aria-hidden="true"></i>
+            </button>
+            <!-- /Buttons -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

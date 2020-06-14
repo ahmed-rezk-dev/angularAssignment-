@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ApiService } from '../api.service';
+import LocalStorage from '../LocalStorage';
 
 @Component({
   selector: 'app-character-details',
@@ -43,5 +44,8 @@ export class CharacterDetailsComponent implements OnInit {
         }
       );
     });
+  }
+  addToFav(key: string, item: Object) {
+    LocalStorage.favoriteAdd(key, item);
   }
 }
